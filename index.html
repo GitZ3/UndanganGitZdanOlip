@@ -1,472 +1,260 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Wedding of GitZ & Olip</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!DOCTYPE html>  <html lang="id">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>The Wedding of GitZ & Olip</title>  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">  
 
-    <style>
-        /* RESET & BASE */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            background: #0f0c29;
-            background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
+<style>  
+    /* RESET & BASE */  
+    * { margin: 0; padding: 0; box-sizing: border-box; }  
+      
+    body {  
+        background: #0f0c29;  
+        background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);  
+        font-family: 'Montserrat', sans-serif;  
+        color: white;  
+        overflow-x: hidden;  
+        scroll-behavior: smooth;  
+    }  
 
-        /* EFEK BACKGROUND BINTANG (AESTHETIC) */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: 
-                radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
-            background-repeat: repeat;
-            background-size: 250px 250px;
-            animation: stars 5s infinite ease-in-out;
-            opacity: 0.4;
-            z-index: -1;
-        }
+    /* EFEK BACKGROUND BINTANG (AESTHETIC) */  
+    body::before {  
+        content: "";  
+        position: fixed;  
+        top: 0; left: 0; width: 100%; height: 100%;  
+        background-image:   
+            radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),  
+            radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),  
+            radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),  
+            radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),  
+            radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0)),  
+            radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));  
+        background-repeat: repeat;  
+        background-size: 250px 250px;  
+        animation: stars 5s infinite ease-in-out;  
+        opacity: 0.4;  
+        z-index: -1;  
+    }  
 
-        @keyframes stars {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
-        }
+    @keyframes stars {  
+        0%, 100% { opacity: 0.3; }  
+        50% { opacity: 0.6; }  
+    }  
 
-        /* OVERLAY AWAL */
-        .overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #0f0c29; z-index: 9999;
-            display: flex; align-items: center; justify-content: center;
-            text-align: center; transition: 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+    /* OVERLAY AWAL */  
+    .overlay {  
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;  
+        background: #0f0c29; z-index: 9999;  
+        display: flex; align-items: center; justify-content: center;  
+        text-align: center; transition: 1.2s cubic-bezier(0.4, 0, 0.2, 1);  
+    }  
 
-        .overlay-content h2 { font-size: 0.8rem; letter-spacing: 4px; color: white; opacity: 0.8; margin-bottom: 10px; }
-        .overlay-content h1 { font-family: 'Alex Brush', cursive; font-size: 3.5rem; color: white; margin-bottom: 30px; text-shadow: 0 0 15px rgba(255,255,255,0.3); }
+    .overlay-content h2 { font-size: 0.8rem; letter-spacing: 4px; color: white; opacity: 0.8; margin-bottom: 10px; }  
+    .overlay-content h1 { font-family: 'Alex Brush', cursive; font-size: 3.5rem; color: white; margin-bottom: 30px; text-shadow: 0 0 15px rgba(255,255,255,0.3); }  
 
-        .btn-open {
-            padding: 14px 40px; background: white; border: none;
-            border-radius: 50px; color: #0f0c29; font-weight: bold;
-            cursor: pointer; box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
-            transition: 0.3s;
-        }
-        .btn-open:hover { transform: scale(1.05); }
+    .btn-open {  
+        padding: 14px 40px; background: white; border: none;  
+        border-radius: 50px; color: #0f0c29; font-weight: bold;  
+        cursor: pointer; box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);  
+        transition: 0.3s;  
+    }  
+    .btn-open:hover { transform: scale(1.05); }  
 
-        /* MAIN LAYOUT */
-        .main-container { max-width: 500px; margin: 0 auto; padding: 0 20px; }
+    /* MAIN LAYOUT */  
+    .main-container { max-width: 500px; margin: 0 auto; padding: 0 20px; }  
 
-        .scroll-section {
-            padding: 50px 0;
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center; text-align: center;
-        }
+    .scroll-section {  
+        padding: 50px 0;  
+        display: flex; flex-direction: column;  
+        justify-content: center; align-items: center; text-align: center;  
+    }  
 
-        .card { 
-            background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); 
-            padding: 30px 20px; border-radius: 20px; 
-            border: 1px solid rgba(212,175,55,0.2); width: 100%; margin-bottom: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
+    .card {   
+        background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);   
+        padding: 30px 20px; border-radius: 20px;   
+        border: 1px solid rgba(212,175,55,0.2); width: 100%; margin-bottom: 25px;  
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);  
+    }  
 
-        .main-title { font-family: 'Alex Brush', cursive; font-size: 3.2rem; color: #d4af37; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Wedding of GitZ & Olip</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    .main-title { font-family: 'Alex Brush', cursive; font-size: 3.2rem; color: #d4af37; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }  
+    .section-title { font-family: 'Alex Brush', cursive; font-size: 2.3rem; color: #d4af37; margin-bottom: 20px; }  
+      
+    /* IMAGE GALLERY */  
+    .img-frame {   
+        width: 100%; border-radius: 15px; overflow: hidden;   
+        border: 2px solid #d4af37; margin-bottom: 20px;  
+        box-shadow: 0 10px 25px rgba(0,0,0,0.6);  
+    }  
+    .img-frame img { width: 100%; display: block; object-fit: cover; }  
 
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* TAGS */  
+    .tag {   
+        background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37;  
+        padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; color: #d4af37; margin: 5px;  
+        display: inline-block;  
+    }  
 
-        body {
-            background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
+    /* RUNDOWN */  
+    .rundown-item {   
+        display: flex; justify-content: space-between;   
+        border-bottom: 1px dashed rgba(255,255,255,0.1); padding: 12px 0;  
+        font-size: 0.9rem;  
+    }  
 
-            /* === 3D CAMERA === */
-            perspective: 1400px;
-            transform-style: preserve-3d;
-        }
+    /* BUTTONS & INFO */  
+    .btn-map {   
+        display: inline-block; margin-top: 25px; padding: 12px 30px;   
+        background: #d4af37; color: #0f0c29; text-decoration: none;   
+        border-radius: 10px; font-weight: bold; transition: 0.3s;  
+    }  
+    .btn-map:hover { background: #f1c40f; }  
 
-        /* ==== PARALLAX STAR LAYERS ==== */
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background-image:
-                radial-gradient(2px 2px at 20% 30%, #fff, transparent),
-                radial-gradient(1px 1px at 80% 70%, #fff, transparent),
-                radial-gradient(2px 2px at 60% 10%, #ddd, transparent);
-            animation: starMove 40s linear infinite;
-            opacity: .35;
-            z-index: -2;
-            transform: translateZ(-600px) scale(2);
-        }
+    .dana-box { background: #0070ba; color: white; padding: 18px; border-radius: 15px; margin-top: 15px; font-weight: bold; font-size: 1rem; }  
 
-        @keyframes starMove {
-            from { transform: translateY(0) translateZ(-600px) scale(2); }
-            to { transform: translateY(-2000px) translateZ(-600px) scale(2); }
-        }
+    .quote { font-style: italic; font-size: 0.85rem; line-height: 1.7; opacity: 0.9; }  
 
-        /* ==== OVERLAY ==== */
-        .overlay {
-            position: fixed; inset: 0;
-            background: #0f0c29;
-            z-index: 9999;
-            display: flex; align-items: center; justify-content: center;
-            text-align: center;
-            transition: 1.2s;
-        }
-
-        .overlay-content {
-            transform: translateZ(120px);
-        }
-
-        .overlay-content h1 {
-            font-family: 'Alex Brush', cursive;
-            font-size: 3.5rem;
-            text-shadow: 0 20px 40px rgba(0,0,0,.6);
-        }
-
-        .btn-open {
-            padding: 14px 40px;
-            background: white;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: .3s;
-        }
-
-        .btn-open:hover {
-            transform: translateY(-4px) scale(1.05);
-        }
-
-        /* ==== MAIN CONTAINER FLOAT ==== */
-        .main-container {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 0 20px;
-            transform-style: preserve-3d;
-        }
-
-        /* ==== SECTION DEPTH ==== */
-        .scroll-section {
-            padding: 60px 0;
-            display: flex; flex-direction: column;
-            align-items: center;
-            text-align: center;
-
-            transform-style: preserve-3d;
-        }
-
-        /* ==== CARD 3D ==== */
-        .card {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(14px);
-            padding: 30px 20px;
-            border-radius: 20px;
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Wedding of GitZ & Olip</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-    background: radial-gradient(circle at center,#1b2735 0%,#090a0f 100%);
-    font-family:'Montserrat',sans-serif;
-    color:white;
-    overflow-x:hidden;
-    scroll-behavior:smooth;
-}
-
-/* === 3D CAMERA WRAPPER (AMAN) === */
-#scene-3d{
-    perspective:1200px;
-    transform-style:preserve-3d;
-}
-
-/* BACKGROUND STAR */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background-image:
-        radial-gradient(2px 2px at 20% 30%,#fff,transparent),
-        radial-gradient(1px 1px at 80% 70%,#fff,transparent),
-        radial-gradient(2px 2px at 60% 10%,#ddd,transparent);
-    opacity:.25;
-    z-index:-1;
-}
-
-/* OVERLAY */
-.overlay{
-    position:fixed;inset:0;
-    background:#0f0c29;
-    z-index:9999;
-    display:flex;align-items:center;justify-content:center;
-    text-align:center;
-    transition:1.2s;
-}
-
-.overlay-content h1{
-    font-family:'Alex Brush',cursive;
-    font-size:3.5rem;
-}
-
-/* MAIN */
-.main-container{
-    max-width:500px;
-    margin:0 auto;
-    padding:0 20px;
-    transform-style:preserve-3d;
-    transition:transform .2s ease-out;
-}
-
-/* SECTION */
-.scroll-section{
-    padding:60px 0;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-}
-
-/* CARD FLOAT */
-.card{
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(10px);
-    padding:30px 20px;
-    border-radius:20px;
-    border:1px solid rgba(212,175,55,0.2);
-    width:100%;
-    margin-bottom:25px;
-
-    transform:translateZ(40px);
-    box-shadow:0 25px 50px rgba(0,0,0,.5);
-    transition:.4s;
-}
-
-.card:hover{
-    transform:translateZ(70px);
-}
-
-/* IMAGE */
-.img-frame{
-    width:100%;
-    border-radius:15px;
-    overflow:hidden;
-    border:2px solid #d4af37;
-    margin-bottom:20px;
-    transform:translateZ(30px);
-}
-
-.img-frame img{width:100%;display:block;}
-
-.section-title{
-    font-family:'Alex Brush',cursive;
-    font-size:2.3rem;
-    color:#d4af37;
-    margin-bottom:20px;
-}
-
-.tag{
-    background:rgba(212,175,55,0.1);
-    border:1px solid #d4af37;
-    padding:6px 14px;
-    border-radius:20px;
-    font-size:.75rem;
-    color:#d4af37;
-    margin:5px;
-    display:inline-block;
-}
-
-.btn-map{
-    display:inline-block;
-    margin-top:25px;
-    padding:12px 30px;
-    background:#d4af37;
-    color:#0f0c29;
-    text-decoration:none;
-    border-radius:10px;
-    font-weight:bold;
-}
+    @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }  
 </style>
-</head>
 
-<body style="overflow:hidden;">
-<div id="scene-3d">
+</head>  
+<body style="overflow: hidden;">  <div id="guest-overlay" class="overlay">  
+    <div class="overlay-content">  
+        <h2>WEDDING INVITATION</h2>  
+        <h1>GitZ & Olip</h1>  
+        <button onclick="mulaiUndangan()" class="btn-open">BUKA UNDANGAN</button>  
+    </div>  
+</div>  
 
-<div id="guest-overlay" class="overlay">
-<div class="overlay-content">
-<h2>WEDDING INVITATION</h2>
-<h1>GitZ & Olip</h1>
-<button onclick="mulaiUndangan()" class="btn-open">BUKA UNDANGAN</button>
-</div>
-</div>
+<audio id="weddingMusic" loop>  
+    <source src="bg.mp3" type="audio/mpeg">  
+</audio>  
 
-<audio id="weddingMusic" loop>
-<source src="bg.mp3" type="audio/mpeg">
-</audio>
+<div class="main-container">  
+      
+    <section class="scroll-section" style="min-height: 100vh;">  
+        <div class="card">  
+            <p style="margin-bottom: 20px; font-size: 0.9rem; letter-spacing: 1px;">Bismillahirramanirrahim</p>  
+            <p class="quote">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang."</p>  
+            <p style="margin-top: 15px; font-size: 0.75rem; font-weight: bold; color: #d4af37;">(QS. AR-RUM: 21)</p>  
+        </div>  
+        <div style="margin-top: 20px; animation: bounce 2s infinite;"><i class="fas fa-chevron-down"></i></div>  
+    </section>  
 
-<div class="main-container">
-        
-        <section class="scroll-section" style="min-height: 100vh;">
-            <div class="card">
-                <p style="margin-bottom: 20px; font-size: 0.9rem; letter-spacing: 1px;">Bismillahirramanirrahim</p>
-                <p class="quote">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang."</p>
-                <p style="margin-top: 15px; font-size: 0.75rem; font-weight: bold; color: #d4af37;">(QS. AR-RUM: 21)</p>
-            </div>
-            <div style="margin-top: 20px; animation: bounce 2s infinite;"><i class="fas fa-chevron-down"></i></div>
-        </section>
+    <section class="scroll-section">  
+<h1 style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.8rem; color: #d4af37; letter-spacing: 1px; margin-bottom: 5px;">  
+    Muhamad Mughniy Ramadhon  
+</h1>  
+<p style="font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 1.2rem; color: #fff; margin-bottom: 8px;">(GitZ)</p>  
+<p style="font-size: 0.85rem; opacity: 0.8; max-width: 80%; line-height: 1.5;">  
+    Putra ketiga dari Keluarga Besar <br>   
+    <strong>Bapak Ikhwanudin & Ibu Enih Nuryanih</strong>  
+</p>  
 
-        <section class="scroll-section">
-    <h1 style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.8rem; color: #d4af37; letter-spacing: 1px; margin-bottom: 5px;">
-        Muhamad Mughniy Ramadhon
-    </h1>
-    <p style="font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 1.2rem; color: #fff; margin-bottom: 8px;">(GitZ)</p>
-    <p style="font-size: 0.85rem; opacity: 0.8; max-width: 80%; line-height: 1.5;">
-        Putra ketiga dari Keluarga Besar <br> 
-        <strong>Bapak Ikhwanudin & Ibu Enih Nuryanih</strong>
-    </p>
+<div style="font-family: 'Alex Brush', cursive; font-size: 2.5rem; color: #d4af37; margin: 20px 0;">&</div>  
 
-    <div style="font-family: 'Alex Brush', cursive; font-size: 2.5rem; color: #d4af37; margin: 20px 0;">&</div>
+<h1 style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.8rem; color: #d4af37; letter-spacing: 1px; margin-bottom: 5px;">  
+    Nurholipah Janah, S. Pd, Gr  
+</h1>  
+<p style="font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 1.2rem; color: #fff; margin-bottom: 8px;">(Olip)</p>  
+<p style="font-size: 0.85rem; opacity: 0.8; max-width: 80%; line-height: 1.5;">  
+    Putri pertama dari Keluarga <br>   
+    <strong>Bapak Edi Syaputra & Ibu Rahmawati</strong>  
+</p>
 
-    <h1 style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.8rem; color: #d4af37; letter-spacing: 1px; margin-bottom: 5px;">
-        Nurholipah Janah, S. Pd, Gr
-    </h1>
-    <p style="font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 1.2rem; color: #fff; margin-bottom: 8px;">(Olip)</p>
-    <p style="font-size: 0.85rem; opacity: 0.8; max-width: 80%; line-height: 1.5;">
-        Putri pertama dari Keluarga <br> 
-        <strong>Bapak Edi Syaputra & Ibu Rahmawati</strong>
-    </p>
-</section>
+</section>  <section class="scroll-section">  
+        <h2 class="section-title">Prewedding Gallery</h2>  
+            <div class="img-frame"><img src="img/image1.jpg" alt="Prewedding 1"></div>  
+            <div class="img-frame"><img src="img/image2.jpg" alt="Prewedding 2"></div>  
+            <div class="img-frame"><img src="img/image3.jpg" alt="Prewedding 3"></div>  
+            <div class="img-frame"><img src="img/image4.jpg" alt="Prewedding 4"></div>  
+            <div class="img-frame"><img src="img/image5.jpg" alt="Prewedding 5"></div>  
+            <div class="img-frame"><img src="img/image6.jpg" alt="Prewedding 6"></div>  
+            <div class="img-frame"><img src="img/image7.jpg" alt="Prewedding 7"></div>  
+    </section>  
 
-        <section class="scroll-section">
-            <h2 class="section-title">Prewedding Gallery</h2>
-                <div class="img-frame"><img src="img/image1.jpg" alt="Prewedding 1"></div>
-                <div class="img-frame"><img src="img/image2.jpg" alt="Prewedding 2"></div>
-                <div class="img-frame"><img src="img/image3.jpg" alt="Prewedding 3"></div>
-                <div class="img-frame"><img src="img/image4.jpg" alt="Prewedding 4"></div>
-                <div class="img-frame"><img src="img/image5.jpg" alt="Prewedding 5"></div>
-                <div class="img-frame"><img src="img/image6.jpg" alt="Prewedding 6"></div>
-                <div class="img-frame"><img src="img/image7.jpg" alt="Prewedding 7"></div>
-        </section>
+    <section class="scroll-section">  
+        <div class="card">  
+            <h2 class="section-title">Tamu Terhormat</h2>  
+            <div style="text-align: center;">  
+                <span class="tag">Jastin Biber</span> <span class="tag">Elon Mas</span>  
+                <span class="tag">Donald Tram</span> <span class="tag">Markjubeg</span>  
+                <span class="tag">CR7</span> <span class="tag">Mesi</span>  
+                <span class="tag">Neymar</span> <span class="tag">Augero</span>  
+                <span class="tag">Mr Beast</span> <span class="tag">Putin</span>  
+                <span class="tag">Kim Jong Un</span> <span class="tag">Sukarno</span>  
+                <span class="tag">Hj. Wawan</span> <span class="tag">RT. 02</span> <span class="tag">RT. 04</span>  
+            </div>  
+        </div>  
+        <div class="card">  
+            <h2 class="section-title">Special Guest Band</h2>  
+            <div style="text-align: center;">  
+                <span class="tag">BMTH</span> <span class="tag">Baby Metal</span>  
+                <span class="tag">Linkin Park</span> <span class="tag">Green Day</span>  
+                <span class="tag">Avenged Sevenfold</span> <span class="tag">Eminem</span>  
+                <span class="tag">Slaughter To Prevail</span> <span class="tag">Black Pink</span>  
+                <span class="tag">JKT48</span>   
+            </div>  
+        </div>  
+        <div class="card">  
+            <h2 class="section-title">Master of Ceremony</h2>  
+            <div style="text-align: center;">  
+                <span class="tag" style="font-size: 1rem; padding: 10px 25px;">MR. D</span>  
+            </div>  
+        </div>  
+    </section>  
 
-        <section class="scroll-section">
-            <div class="card">
-                <h2 class="section-title">Tamu Terhormat</h2>
-                <div style="text-align: center;">
-                    <span class="tag">Jastin Biber</span> <span class="tag">Elon Mas</span>
-                    <span class="tag">Donald Tram</span> <span class="tag">Markjubeg</span>
-                    <span class="tag">CR7</span> <span class="tag">Mesi</span>
-                    <span class="tag">Neymar</span> <span class="tag">Augero</span>
-                    <span class="tag">Mr Beast</span> <span class="tag">Putin</span>
-                    <span class="tag">Kim Jong Un</span> <span class="tag">Sukarno</span>
-                    <span class="tag">Hj. Wawan</span> <span class="tag">RT. 02</span> <span class="tag">RT. 04</span>
-                </div>
-            </div>
-            <div class="card">
-                <h2 class="section-title">Special Guest Band</h2>
-                <div style="text-align: center;">
-                    <span class="tag">BMTH</span> <span class="tag">Baby Metal</span>
-                    <span class="tag">Linkin Park</span> <span class="tag">Green Day</span>
-                    <span class="tag">Avenged Sevenfold</span> <span class="tag">Eminem</span>
-                    <span class="tag">Slaughter To Prevail</span> <span class="tag">Black Pink</span>
-                    <span class="tag">JKT48</span> 
-                </div>
-            </div>
-            <div class="card">
-                <h2 class="section-title">Master of Ceremony</h2>
-                <div style="text-align: center;">
-                    <span class="tag" style="font-size: 1rem; padding: 10px 25px;">MR. D</span>
-                </div>
-            </div>
-        </section>
+    <section class="scroll-section">  
+        <div class="card">  
+            <h2 class="section-title">Acara & Lokasi</h2>  
+            <p style="font-weight: bold; letter-spacing: 2px; margin-bottom: 15px; color: #d4af37;">HARI, TGL BULAN TAHUN</p>  
+            <div class="rundown-item"><span>08:00 - 11:00</span> <strong>AKAD</strong></div>  
+            <div class="rundown-item"><span>12:00 - 13:00</span> <strong>BREAK</strong></div>  
+            <div class="rundown-item"><span>14:00 - 00:00</span> <strong>PARTY</strong></div>  
+              
+            <div style="margin-top: 35px;">  
+                <i class="fas fa-map-marker-alt" style="color: #d4af37; font-size: 1.8rem; margin-bottom: 10px;"></i>  
+                <p style="font-size: 0.95rem;"><strong>Villa Handap Bapak Aing</strong><br>Jl. Palm Hill Golf Club, Sentul</p>  
+                <a href="https://maps.app.goo.gl/Yd64bcV3J957Rtgs7" target="_blank" class="btn-map">LIHAT GOOGLE MAPS</a>  
+            </div>  
+        </div>  
+    </section>  
 
-        <section class="scroll-section">
-            <div class="card">
-                <h2 class="section-title">Acara & Lokasi</h2>
-                <p style="font-weight: bold; letter-spacing: 2px; margin-bottom: 15px; color: #d4af37;">HARI, TGL BULAN TAHUN</p>
-                <div class="rundown-item"><span>08:00 - 11:00</span> <strong>AKAD</strong></div>
-                <div class="rundown-item"><span>12:00 - 13:00</span> <strong>BREAK</strong></div>
-                <div class="rundown-item"><span>14:00 - 00:00</span> <strong>PARTY</strong></div>
-                
-                <div style="margin-top: 35px;">
-                    <i class="fas fa-map-marker-alt" style="color: #d4af37; font-size: 1.8rem; margin-bottom: 10px;"></i>
-                    <p style="font-size: 0.95rem;"><strong>Villa Handap Bapak Aing</strong><br>Jl. Palm Hill Golf Club, Sentul</p>
-                    <a href="https://maps.app.goo.gl/Yd64bcV3J957Rtgs7" target="_blank" class="btn-map">LIHAT GOOGLE MAPS</a>
-                </div>
-            </div>
-        </section>
+    <section class="scroll-section">  
+        <div class="card">  
+            <h2 class="section-title">Wedding Gift</h2>  
+            <p style="font-size: 0.85rem; margin-bottom: 15px;">Doa restu Anda adalah hadiah terindah. Namun jika ingin mengirimkan tanda kasih digital:</p>  
+            <div class="dana-box">  
+                <i class="fas fa-wallet"></i> DANA : 085126092957  
+            </div>  
+        </div>  
+    </section>  
+       
+    <section class="scroll-section">  
+        <div class="card">  
+            <p class="quote">"Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga, apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kami."</p>  
+            <h1 class="main-title" style="font-size: 2.8rem; margin-top: 25px;">GitZ & Olip</h1>  
+            <p style="font-size: 0.75rem; margin-top: 10px; opacity: 0.7;">Beserta Keluarga Besar</p>  
+        </div>  
+        <p style="margin: 40px 0; opacity: 0.4; font-size: 0.65rem; letter-spacing: 2px;">© 2026 GITZCALL911 PRODUCTION</p>  
+    </section>  
 
-        <section class="scroll-section">
-            <div class="card">
-                <h2 class="section-title">Wedding Gift</h2>
-                <p style="font-size: 0.85rem; margin-bottom: 15px;">Doa restu Anda adalah hadiah terindah. Namun jika ingin mengirimkan tanda kasih digital:</p>
-                <div class="dana-box">
-                    <i class="fas fa-wallet"></i> DANA : 085126092957
-                </div>
-            </div>
-        </section>
-         
-        <section class="scroll-section">
-            <div class="card">
-                <p class="quote">"Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga, apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kami."</p>
-                <h1 class="main-title" style="font-size: 2.8rem; margin-top: 25px;">GitZ & Olip</h1>
-                <p style="font-size: 0.75rem; margin-top: 10px; opacity: 0.7;">Beserta Keluarga Besar</p>
-            </div>
-            <p style="margin: 40px 0; opacity: 0.4; font-size: 0.65rem; letter-spacing: 2px;">© 2026 GITZCALL911 PRODUCTION</p>
-        </section>
-</div>
-    </div>
+</div>  
 
-    <script>
-function mulaiUndangan(){
-    const overlay=document.getElementById('guest-overlay');
-    const music=document.getElementById('weddingMusic');
-
-    overlay.style.opacity='0';
-    setTimeout(()=>{
-        overlay.style.display='none';
-        document.body.style.overflow='auto';
-    },1200);
-
-    music.play().catch(()=>{});
-}
-
-/* === PARALLAX 3D (STABLE) === */
-const container=document.querySelector('.main-container');
-
-document.addEventListener('mousemove',e=>{
-    const x=(e.clientX/window.innerWidth-.5)*6;
-    const y=(e.clientY/window.innerHeight-.5)*-6;
-
-    container.style.transform=`rotateY(${x}deg) rotateX(${y}deg)`;
-});
+<script>  
+    function mulaiUndangan() {  
+        const overlay = document.getElementById('guest-overlay');  
+        const music = document.getElementById('weddingMusic');  
+          
+        overlay.style.opacity = '0';  
+        setTimeout(() => {  
+            overlay.style.display = 'none';  
+            document.body.style.overflow = 'auto';  
+        }, 1200);  
+          
+        music.play().catch(e => console.log("Autoplay diblokir browser, musik akan menyusul."));  
+    }  
 </script>
-</body>
+
+</body>  
 </html>
