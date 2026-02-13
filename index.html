@@ -12,18 +12,16 @@
         /* RESET & BASE */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        html { scroll-behavior: smooth; }
-
         body {
             background: #0f0c29;
             background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
             font-family: 'Montserrat', sans-serif;
             color: white;
             overflow-x: hidden;
-            perspective: 1200px; /* Base for 3D effects */
+            scroll-behavior: smooth;
         }
 
-        /* EFEK BACKGROUND BINTANG */
+        /* EFEK BACKGROUND BINTANG (AESTHETIC) */
         body::before {
             content: "";
             position: fixed;
@@ -64,69 +62,60 @@
             cursor: pointer; box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
             transition: 0.3s;
         }
-        .btn-open:hover { transform: scale(1.05) translateY(-3px); }
+        .btn-open:hover { transform: scale(1.05); }
 
         /* MAIN LAYOUT */
         .main-container { max-width: 500px; margin: 0 auto; padding: 0 20px; }
 
         .scroll-section {
-            padding: 60px 0;
+            padding: 50px 0;
             display: flex; flex-direction: column;
             justify-content: center; align-items: center; text-align: center;
-            min-height: 85vh;
-            transition: transform 0.8s ease-out, opacity 0.8s ease-out;
         }
 
-        /* 3D CARD EFFECT */
         .card { 
-            background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); 
-            padding: 35px 25px; border-radius: 20px; 
-            border: 1px solid rgba(212,175,55,0.2); width: 100%; margin-bottom: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            transform-style: preserve-3d;
-            transition: transform 0.5s ease;
+            background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); 
+            padding: 30px 20px; border-radius: 20px; 
+            border: 1px solid rgba(212,175,55,0.2); width: 100%; margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        .main-title { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.8rem; color: #d4af37; letter-spacing: 1px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-        .section-title { font-family: 'Alex Brush', cursive; font-size: 2.8rem; color: #d4af37; margin-bottom: 25px; }
+        .main-title { font-family: 'Alex Brush', cursive; font-size: 3.2rem; color: #d4af37; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .section-title { font-family: 'Alex Brush', cursive; font-size: 2.3rem; color: #d4af37; margin-bottom: 20px; }
         
-        /* IMAGE GALLERY 3D */
+        /* IMAGE GALLERY */
         .img-frame { 
             width: 100%; border-radius: 15px; overflow: hidden; 
-            border: 2px solid #d4af37; margin-bottom: 25px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid #d4af37; margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
         }
-        .img-frame:hover { transform: scale(1.03) rotateZ(1deg); }
         .img-frame img { width: 100%; display: block; object-fit: cover; }
 
         /* TAGS */
         .tag { 
             background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37;
-            padding: 8px 16px; border-radius: 20px; font-size: 0.75rem; color: #d4af37; margin: 6px;
-            display: inline-block; transition: 0.3s;
+            padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; color: #d4af37; margin: 5px;
+            display: inline-block;
         }
-        .tag:hover { background: #d4af37; color: #0f0c29; transform: translateY(-2px); }
 
         /* RUNDOWN */
         .rundown-item { 
             display: flex; justify-content: space-between; 
-            border-bottom: 1px dashed rgba(255,255,255,0.1); padding: 15px 0;
-            font-size: 0.95rem;
+            border-bottom: 1px dashed rgba(255,255,255,0.1); padding: 12px 0;
+            font-size: 0.9rem;
         }
 
         /* BUTTONS & INFO */
         .btn-map { 
-            display: inline-block; margin-top: 25px; padding: 14px 35px; 
+            display: inline-block; margin-top: 25px; padding: 12px 30px; 
             background: #d4af37; color: #0f0c29; text-decoration: none; 
-            border-radius: 12px; font-weight: bold; transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(212,175,55,0.3);
+            border-radius: 10px; font-weight: bold; transition: 0.3s;
         }
-        .btn-map:hover { background: #f1c40f; transform: scale(1.05); }
+        .btn-map:hover { background: #f1c40f; }
 
-        .dana-box { background: #0070ba; color: white; padding: 20px; border-radius: 15px; margin-top: 15px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 10px 20px rgba(0,112,186,0.3); }
+        .dana-box { background: #0070ba; color: white; padding: 18px; border-radius: 15px; margin-top: 15px; font-weight: bold; font-size: 1rem; }
 
-        .quote { font-style: italic; font-size: 0.9rem; line-height: 1.8; opacity: 0.9; }
+        .quote { font-style: italic; font-size: 0.85rem; line-height: 1.7; opacity: 0.9; }
 
         @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
     </style>
@@ -149,45 +138,49 @@
         
         <section class="scroll-section" style="min-height: 100vh;">
             <div class="card">
-                <p style="margin-bottom: 20px; font-size: 0.9rem; letter-spacing: 2px; color: #d4af37;">BISMILLAHIRRAHMANIRRAHIM</p>
+                <p style="margin-bottom: 20px; font-size: 0.9rem; letter-spacing: 1px;">Bismillahirramanirrahim</p>
                 <p class="quote">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang."</p>
                 <p style="margin-top: 15px; font-size: 0.75rem; font-weight: bold; color: #d4af37;">(QS. AR-RUM: 21)</p>
             </div>
-            <div style="margin-top: 20px; animation: bounce 2s infinite; opacity: 0.6;"><i class="fas fa-chevron-down fa-2x"></i></div>
+            <div style="margin-top: 20px; animation: bounce 2s infinite;"><i class="fas fa-chevron-down"></i></div>
         </section>
 
         <section class="scroll-section">
-            <h1 class="main-title">Muhamad Mughniy Ramadhon</h1>
-            <p style="font-weight: 300; font-size: 1.2rem; margin: 8px 0;">(GitZ)</p>
-            <p style="font-size: 0.85rem; opacity: 0.8; max-width: 85%; line-height: 1.6;">
-                Putra ketiga dari Keluarga Besar <br> 
-                <strong>Bapak Ikhwanudin & Ibu Enih Nuryanih</strong>
-            </p>
+    <h1 style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.8rem; color: #d4af37; letter-spacing: 1px; margin-bottom: 5px;">
+        Muhamad Mughniy Ramadhon
+    </h1>
+    <p style="font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 1.2rem; color: #fff; margin-bottom: 8px;">(GitZ)</p>
+    <p style="font-size: 0.85rem; opacity: 0.8; max-width: 80%; line-height: 1.5;">
+        Putra ketiga dari Keluarga Besar <br> 
+        <strong>Bapak Ikhwanudin & Ibu Enih Nuryanih</strong>
+    </p>
 
-            <div style="font-family: 'Alex Brush', cursive; font-size: 3.5rem; color: #d4af37; margin: 25px 0;">&</div>
+    <div style="font-family: 'Alex Brush', cursive; font-size: 2.5rem; color: #d4af37; margin: 20px 0;">&</div>
 
-            <h1 class="main-title">Nurholipah Janah, S. Pd, Gr</h1>
-            <p style="font-weight: 300; font-size: 1.2rem; margin: 8px 0;">(Olip)</p>
-            <p style="font-size: 0.85rem; opacity: 0.8; max-width: 85%; line-height: 1.6;">
-                Putri pertama dari Keluarga <br> 
-                <strong>Bapak Edi Syaputra & Ibu Rahmawati</strong>
-            </p>
-        </section>
+    <h1 style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.8rem; color: #d4af37; letter-spacing: 1px; margin-bottom: 5px;">
+        Nurholipah Janah, S. Pd, Gr
+    </h1>
+    <p style="font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 1.2rem; color: #fff; margin-bottom: 8px;">(Olip)</p>
+    <p style="font-size: 0.85rem; opacity: 0.8; max-width: 80%; line-height: 1.5;">
+        Putri pertama dari Keluarga <br> 
+        <strong>Bapak Edi Syaputra & Ibu Rahmawati</strong>
+    </p>
+</section>
 
         <section class="scroll-section">
             <h2 class="section-title">Prewedding Gallery</h2>
-            <div class="img-frame"><img src="img/image1.jpg" alt="Gallery 1"></div>
-            <div class="img-frame"><img src="img/image2.jpg" alt="Gallery 2"></div>
-            <div class="img-frame"><img src="img/image3.jpg" alt="Gallery 3"></div>
-            <div class="img-frame"><img src="img/image4.jpg" alt="Gallery 4"></div>
-            <div class="img-frame"><img src="img/image5.jpg" alt="Gallery 5"></div>
-            <div class="img-frame"><img src="img/image6.jpg" alt="Gallery 6"></div>
-            <div class="img-frame"><img src="img/image7.jpg" alt="Gallery 7"></div>
+                <div class="img-frame"><img src="img/image1.jpg" alt="Prewedding 1"></div>
+                <div class="img-frame"><img src="img/image2.jpg" alt="Prewedding 2"></div>
+                <div class="img-frame"><img src="img/image3.jpg" alt="Prewedding 3"></div>
+                <div class="img-frame"><img src="img/image4.jpg" alt="Prewedding 4"></div>
+                <div class="img-frame"><img src="img/image5.jpg" alt="Prewedding 5"></div>
+                <div class="img-frame"><img src="img/image6.jpg" alt="Prewedding 6"></div>
+                <div class="img-frame"><img src="img/image7.jpg" alt="Prewedding 7"></div>
         </section>
 
         <section class="scroll-section">
             <div class="card">
-                <h2 class="section-title" style="font-size: 2.2rem;">Tamu Terhormat</h2>
+                <h2 class="section-title">Tamu Terhormat</h2>
                 <div style="text-align: center;">
                     <span class="tag">Jastin Biber</span> <span class="tag">Elon Mas</span>
                     <span class="tag">Donald Tram</span> <span class="tag">Markjubeg</span>
@@ -199,7 +192,7 @@
                 </div>
             </div>
             <div class="card">
-                <h2 class="section-title" style="font-size: 2.2rem;">Special Guest Band</h2>
+                <h2 class="section-title">Special Guest Band</h2>
                 <div style="text-align: center;">
                     <span class="tag">BMTH</span> <span class="tag">Baby Metal</span>
                     <span class="tag">Linkin Park</span> <span class="tag">Green Day</span>
@@ -209,23 +202,25 @@
                 </div>
             </div>
             <div class="card">
-                <h2 class="section-title" style="font-size: 2.2rem;">Master of Ceremony</h2>
-                <span class="tag" style="font-size: 1.2rem; padding: 12px 35px; font-weight: bold;">MR. D</span>
+                <h2 class="section-title">Master of Ceremony</h2>
+                <div style="text-align: center;">
+                    <span class="tag" style="font-size: 1rem; padding: 10px 25px;">MR. D</span>
+                </div>
             </div>
         </section>
 
         <section class="scroll-section">
             <div class="card">
                 <h2 class="section-title">Acara & Lokasi</h2>
-                <p style="font-weight: bold; letter-spacing: 2px; margin-bottom: 20px; color: #d4af37;">SABTU, 14 FEBRUARI 2026</p>
+                <p style="font-weight: bold; letter-spacing: 2px; margin-bottom: 15px; color: #d4af37;">HARI, TGL BULAN TAHUN</p>
                 <div class="rundown-item"><span>08:00 - 11:00</span> <strong>AKAD</strong></div>
                 <div class="rundown-item"><span>12:00 - 13:00</span> <strong>BREAK</strong></div>
-                <div class="rundown-item"><span>14:00 - SELESAI</span> <strong>PARTY</strong></div>
+                <div class="rundown-item"><span>14:00 - 00:00</span> <strong>PARTY</strong></div>
                 
-                <div style="margin-top: 40px;">
-                    <i class="fas fa-map-marker-alt" style="color: #d4af37; font-size: 2.2rem; margin-bottom: 15px;"></i>
-                    <p style="font-size: 1rem; line-height: 1.6;"><strong>Villa Handap Bapak Aing</strong><br>Jl. Palm Hill Golf Club, Sentul</p>
-                    <a href="https://maps.app.goo.gl/3fX8Jm8S3fX8Jm8S" target="_blank" class="btn-map">BUKA PETA LOKASI</a>
+                <div style="margin-top: 35px;">
+                    <i class="fas fa-map-marker-alt" style="color: #d4af37; font-size: 1.8rem; margin-bottom: 10px;"></i>
+                    <p style="font-size: 0.95rem;"><strong>Villa Handap Bapak Aing</strong><br>Jl. Palm Hill Golf Club, Sentul</p>
+                    <a href="https://maps.app.goo.gl/Yd64bcV3J957Rtgs7" target="_blank" class="btn-map">LIHAT GOOGLE MAPS</a>
                 </div>
             </div>
         </section>
@@ -233,9 +228,9 @@
         <section class="scroll-section">
             <div class="card">
                 <h2 class="section-title">Wedding Gift</h2>
-                <p style="font-size: 0.9rem; margin-bottom: 20px;">Doa restu Anda adalah hadiah terindah. Namun jika ingin mengirimkan tanda kasih digital:</p>
+                <p style="font-size: 0.85rem; margin-bottom: 15px;">Doa restu Anda adalah hadiah terindah. Namun jika ingin mengirimkan tanda kasih digital:</p>
                 <div class="dana-box">
-                    <i class="fas fa-wallet" style="margin-right: 12px;"></i> DANA : 085126092957
+                    <i class="fas fa-wallet"></i> DANA : 085126092957
                 </div>
             </div>
         </section>
@@ -243,10 +238,10 @@
         <section class="scroll-section">
             <div class="card">
                 <p class="quote">"Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga, apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kami."</p>
-                <h1 style="font-family: 'Alex Brush', cursive; font-size: 3.2rem; color: #d4af37; margin-top: 30px;">GitZ & Olip</h1>
-                <p style="font-size: 0.85rem; margin-top: 10px; opacity: 0.7;">Beserta Keluarga Besar</p>
+                <h1 class="main-title" style="font-size: 2.8rem; margin-top: 25px;">GitZ & Olip</h1>
+                <p style="font-size: 0.75rem; margin-top: 10px; opacity: 0.7;">Beserta Keluarga Besar</p>
             </div>
-            <p style="margin: 40px 0; opacity: 0.4; font-size: 0.7rem; letter-spacing: 4px;">© 2026 GITZCALL911 PRODUCTION</p>
+            <p style="margin: 40px 0; opacity: 0.4; font-size: 0.65rem; letter-spacing: 2px;">© 2026 GITZCALL911 PRODUCTION</p>
         </section>
 
     </div>
@@ -262,36 +257,8 @@
                 document.body.style.overflow = 'auto';
             }, 1200);
             
-            music.play().catch(e => console.log("Audio play interaction required"));
+            music.play().catch(e => console.log("Autoplay diblokir browser, musik akan menyusul."));
         }
-
-        // 3D Parallax & Scroll Animation
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('.scroll-section');
-            const cards = document.querySelectorAll('.card');
-            
-            sections.forEach(sec => {
-                const rect = sec.getBoundingClientRect();
-                if(rect.top < window.innerHeight * 0.8) {
-                    sec.style.opacity = '1';
-                    sec.style.transform = 'translateY(0)';
-                } else {
-                    sec.style.opacity = '0.3';
-                    sec.style.transform = 'translateY(30px)';
-                }
-            });
-
-            cards.forEach(card => {
-                const rect = card.getBoundingClientRect();
-                const center = window.innerHeight / 2;
-                const distance = rect.top + rect.height / 2 - center;
-                const rotate = distance / 25; // Tilt intensity
-                
-                if (Math.abs(rotate) < 15) {
-                    card.style.transform = `rotateX(${-rotate}deg) translateZ(20px)`;
-                }
-            });
-        });
     </script>
 </body>
 </html>
