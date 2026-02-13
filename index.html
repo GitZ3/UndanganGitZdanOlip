@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Wedding of GitZCall911 & Someone</title>
+    <title>The Wedding of GitZ & Olip</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -34,43 +34,49 @@
             cursor: pointer; box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
         }
 
-        .main-container { max-width: 500px; margin: 0 auto; padding: 0 20px; }
+        .main-container { max-width: 500px; margin: 0 auto; padding: 0 15px; }
 
+        /* Jarak Section Diperpendek */
         .scroll-section {
-            min-height: 100vh; display: flex; flex-direction: column;
+            padding: 40px 0;
+            display: flex; flex-direction: column;
             justify-content: center; align-items: center; text-align: center;
-            padding: 60px 0;
         }
 
         .card { 
             background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); 
-            padding: 30px 20px; border-radius: 20px; 
-            border: 1px solid rgba(212,175,55,0.2); width: 100%; margin-bottom: 30px;
+            padding: 25px 20px; border-radius: 20px; 
+            border: 1px solid rgba(212,175,55,0.2); width: 100%; margin-bottom: 20px;
         }
 
-        .main-title { font-family: 'Alex Brush', cursive; font-size: 3.5rem; color: #d4af37; }
-        .section-title { font-family: 'Alex Brush', cursive; font-size: 2.5rem; color: #d4af37; margin-bottom: 20px; }
+        .main-title { font-family: 'Alex Brush', cursive; font-size: 3rem; color: #d4af37; }
+        .section-title { font-family: 'Alex Brush', cursive; font-size: 2.2rem; color: #d4af37; margin-bottom: 15px; }
         
-        /* List Styling */
-        .list-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px; }
+        .list-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 10px; }
         .tag { 
             background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37;
-            padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; color: #d4af37;
+            padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; color: #d4af37;
         }
 
-        /* Rundown Styling */
         .rundown-item { 
             display: flex; justify-content: space-between; 
-            border-bottom: 1px dashed rgba(255,255,255,0.2); padding: 10px 0;
+            border-bottom: 1px dashed rgba(255,255,255,0.2); padding: 8px 0;
+            font-size: 0.9rem;
         }
 
         .dana-box {
-            background: #0070ba; color: white; padding: 20px;
-            border-radius: 15px; margin-top: 20px; font-weight: bold;
+            background: #0070ba; color: white; padding: 15px;
+            border-radius: 12px; margin-top: 15px; font-weight: bold; font-size: 0.9rem;
         }
 
         .photo-box { width: 100%; border-radius: 15px; overflow: hidden; border: 2px solid #d4af37; margin-bottom: 15px; }
         .photo-box img { width: 100%; display: block; }
+
+        .btn-map { 
+            display: inline-block; margin-top: 15px; padding: 12px 20px; 
+            background: #d4af37; color: #0f0c29; text-decoration: none; 
+            border-radius: 8px; font-weight: bold; font-size: 0.9rem;
+        }
     </style>
 </head>
 <body style="overflow: hidden;">
@@ -78,7 +84,7 @@
     <div id="guest-overlay" class="overlay">
         <div class="overlay-content">
             <h2 style="letter-spacing: 3px; font-size: 0.8rem;">THE BIG EVENT</h2>
-            <h1>GitZCall911 & Someone</h1>
+            <h1 style="font-family: 'Alex Brush'; color: #d4af37; font-size: 2.5rem; margin: 10px 0;">GitZCall911 & Someone</h1>
             <button onclick="mulaiUndangan()" class="btn-open">BUKA UNDANGAN</button>
         </div>
     </div>
@@ -89,12 +95,13 @@
 
     <div class="main-container">
         
-        <section class="scroll-section">
-            <h1 class="main-title">GitZCall911</h1>
+        <section class="scroll-section" style="min-height: 90vh;">
+            <h1 class="main-title">GitZ</h1>
             <div style="font-size: 1.5rem; color: #d4af37;">&</div>
-            <h1 class="main-title">Someone</h1>
-            <p style="margin-top: 20px; font-weight: bold;">SABTU, 14 FEBRUARI 2026</p>
-            <p style="opacity: 0.7;">Villa Handap Bapak Aing</p>
+            <h1 class="main-title">Olip</h1>
+            <p style="margin-top: 15px; font-weight: bold; letter-spacing: 2px;">SABTU, 14 FEBRUARI 2026</p>
+            <p style="opacity: 0.7; font-size: 0.9rem;">Villa Handap Bapak Aing</p>
+            <div style="margin-top: 20px; animation: bounce 2s infinite;"><i class="fas fa-chevron-down"></i></div>
         </section>
 
         <section class="scroll-section">
@@ -115,10 +122,10 @@
         <section class="scroll-section">
             <div class="card">
                 <h2 class="section-title">Special Performance</h2>
-                <p style="font-size: 0.8rem; margin-bottom: 15px;">Live Music By:</p>
                 <div class="list-container">
                     <span class="tag" style="background: #000;">BMTH</span>
                     <span class="tag" style="background: #000;">BABY METAL</span>
+                    <span class="tag" style="background: #000;">EMINEM</span>
                     <span class="tag" style="background: #000;">LINKIN PARK</span>
                     <span class="tag" style="background: #000;">GREEN DAY</span>
                     <span class="tag" style="background: #000;">AVENGED SEVENFOLD</span>
@@ -128,28 +135,27 @@
 
         <section class="scroll-section">
             <div class="card">
-                <h2 class="section-title">Acara</h2>
+                <h2 class="section-title">Waktu & Tempat</h2>
                 <div class="rundown-item"><span>08:00 - 11:00</span> <strong>AKAD</strong></div>
-                <div class="rundown-item"><span>11:00 - 13:00</span> <strong>BREAK / ISHOMA</strong></div>
-                <div class="rundown-item"><span>14:00 - 00:00</span> <strong>THE PARTY</strong></div>
+                <div class="rundown-item"><span>12:00 - 13:00</span> <strong>BREAK</strong></div>
+                <div class="rundown-item"><span>14:00 - 00:00</span> <strong>PARTY</strong></div>
+                
+                <div style="margin-top: 20px; text-align: center;">
+                    <i class="fas fa-map-marker-alt" style="color: #d4af37;"></i>
+                    <p style="font-size: 0.9rem; margin-top: 5px;"><strong>Villa Handap Bapak Aing</strong><br>Jl. Palm Hill Golf Club</p>
+                    <a href="https://www.google.com/maps" target="_blank" class="btn-map">NAVIGASI KE LOKASI</a>
+                </div>
             </div>
-        </section>
-
-        <section class="scroll-section">
-            <h2 class="section-title">Our Moments</h2>
-            <div class="photo-box"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600"></div>
-            <div class="photo-box"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600"></div>
         </section>
 
         <section class="scroll-section">
             <div class="card">
                 <h2 class="section-title">Wedding Gift</h2>
-                <p>Terima kasih atas doa dan dukungannya.</p>
                 <div class="dana-box">
                     <i class="fas fa-wallet"></i> DANA : 081234567890
                 </div>
             </div>
-            <p style="margin-top: 30px; opacity: 0.5; font-size: 0.7rem;">© 2026 GitZCall911 & Someone Event</p>
+            <p style="margin-top: 20px; opacity: 0.5; font-size: 0.7rem;">© 2026 GitZCall911 & Someone Event</p>
         </section>
 
     </div>
@@ -163,6 +169,8 @@
             }, 1000);
             document.getElementById('weddingMusic').play();
         }
+
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
     </script>
 </body>
 </html>
