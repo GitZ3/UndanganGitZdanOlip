@@ -122,4 +122,23 @@ body {
     font-weight: bold;
 }
 
+/* ===== SAFE 3D SCENE ===== */
+#scene-3d {
+    perspective: 1200px;
+    transform-style: preserve-3d;
+    overflow-x: hidden;
+}
+
+.main-container {
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+/* Matikan 3D kalau browser lemah */
+@media (max-width: 768px) {
+    .card:hover {
+        transform: none;
+    }
+}
+
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
