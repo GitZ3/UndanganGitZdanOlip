@@ -5,6 +5,16 @@
     box-sizing: border-box;
 }
 
+html {
+    background: #0f0c29;
+}
+
+body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
 html, body {
     overflow-x: hidden;
 }
