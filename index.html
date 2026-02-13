@@ -182,101 +182,157 @@
             backdrop-filter: blur(14px);
             padding: 30px 20px;
             border-radius: 20px;
-            border: 1px solid rgba(212,175,55,0.2);
-            width: 100%;
-            margin-bottom: 25px;
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Wedding of GitZ & Olip</title>
 
-            /* 3D EFFECT */
-            transform: translateZ(80px);
-            box-shadow:
-                0 40px 80px rgba(0,0,0,.6),
-                inset 0 0 40px rgba(255,255,255,.05);
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-            transition: transform .4s ease, box-shadow .4s ease;
-        }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
 
-        .card:hover {
-            transform: translateZ(120px) rotateX(6deg) rotateY(-6deg);
-            box-shadow: 0 60px 120px rgba(0,0,0,.8);
-        }
+body{
+    background: radial-gradient(circle at center,#1b2735 0%,#090a0f 100%);
+    font-family:'Montserrat',sans-serif;
+    color:white;
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+}
 
-        /* ==== IMAGES FLOAT ==== */
-        .img-frame {
-            width: 100%;
-            border-radius: 15px;
-            overflow: hidden;
-            border: 2px solid #d4af37;
-            margin-bottom: 20px;
+/* === 3D CAMERA WRAPPER (AMAN) === */
+#scene-3d{
+    perspective:1200px;
+    transform-style:preserve-3d;
+}
 
-            transform: translateZ(60px);
-            transition: transform .5s ease;
-        }
+/* BACKGROUND STAR */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+        radial-gradient(2px 2px at 20% 30%,#fff,transparent),
+        radial-gradient(1px 1px at 80% 70%,#fff,transparent),
+        radial-gradient(2px 2px at 60% 10%,#ddd,transparent);
+    opacity:.25;
+    z-index:-1;
+}
 
-        .img-frame:hover {
-            transform: translateZ(140px) scale(1.04);
-        }
+/* OVERLAY */
+.overlay{
+    position:fixed;inset:0;
+    background:#0f0c29;
+    z-index:9999;
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;
+    transition:1.2s;
+}
 
-        .img-frame img { width: 100%; display: block; }
+.overlay-content h1{
+    font-family:'Alex Brush',cursive;
+    font-size:3.5rem;
+}
 
-        .section-title {
-            font-family: 'Alex Brush', cursive;
-            font-size: 2.3rem;
-            color: #d4af37;
-            margin-bottom: 20px;
-            transform: translateZ(100px);
-        }
+/* MAIN */
+.main-container{
+    max-width:500px;
+    margin:0 auto;
+    padding:0 20px;
+    transform-style:preserve-3d;
+    transition:transform .2s ease-out;
+}
 
-        .tag {
-            background: rgba(212,175,55,0.1);
-            border: 1px solid #d4af37;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: .75rem;
-            color: #d4af37;
-            margin: 5px;
-            display: inline-block;
+/* SECTION */
+.scroll-section{
+    padding:60px 0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
 
-            transform: translateZ(40px);
-        }
+/* CARD FLOAT */
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    padding:30px 20px;
+    border-radius:20px;
+    border:1px solid rgba(212,175,55,0.2);
+    width:100%;
+    margin-bottom:25px;
 
-        .btn-map {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 12px 30px;
-            background: #d4af37;
-            color: #0f0c29;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
+    transform:translateZ(40px);
+    box-shadow:0 25px 50px rgba(0,0,0,.5);
+    transition:.4s;
+}
 
-            transform: translateZ(90px);
-        }
+.card:hover{
+    transform:translateZ(70px);
+}
 
-        .quote {
-            font-style: italic;
-            font-size: .85rem;
-            line-height: 1.7;
-            opacity: .9;
-        }
-    </style>
+/* IMAGE */
+.img-frame{
+    width:100%;
+    border-radius:15px;
+    overflow:hidden;
+    border:2px solid #d4af37;
+    margin-bottom:20px;
+    transform:translateZ(30px);
+}
+
+.img-frame img{width:100%;display:block;}
+
+.section-title{
+    font-family:'Alex Brush',cursive;
+    font-size:2.3rem;
+    color:#d4af37;
+    margin-bottom:20px;
+}
+
+.tag{
+    background:rgba(212,175,55,0.1);
+    border:1px solid #d4af37;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:.75rem;
+    color:#d4af37;
+    margin:5px;
+    display:inline-block;
+}
+
+.btn-map{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 30px;
+    background:#d4af37;
+    color:#0f0c29;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+}
+</style>
 </head>
 
-<body style="overflow: hidden;">
+<body style="overflow:hidden;">
 <div id="scene-3d">
 
 <div id="guest-overlay" class="overlay">
-    <div class="overlay-content">
-        <h2>WEDDING INVITATION</h2>
-        <h1>GitZ & Olip</h1>
-        <button onclick="mulaiUndangan()" class="btn-open">BUKA UNDANGAN</button>
-    </div>
+<div class="overlay-content">
+<h2>WEDDING INVITATION</h2>
+<h1>GitZ & Olip</h1>
+<button onclick="mulaiUndangan()" class="btn-open">BUKA UNDANGAN</button>
 </div>
-    
-    <audio id="weddingMusic" loop>
-        <source src="bg.mp3" type="audio/mpeg">
-    </audio>
+</div>
 
-    <div class="main-container">
+<audio id="weddingMusic" loop>
+<source src="bg.mp3" type="audio/mpeg">
+</audio>
+
+<div class="main-container">
         
         <section class="scroll-section" style="min-height: 100vh;">
             <div class="card">
@@ -385,47 +441,32 @@
             </div>
             <p style="margin: 40px 0; opacity: 0.4; font-size: 0.65rem; letter-spacing: 2px;">© 2026 GITZCALL911 PRODUCTION</p>
         </section>
-
+</div>
     </div>
 
     <script>
-function mulaiUndangan() {
-    const overlay = document.getElementById('guest-overlay');
-    const music = document.getElementById('weddingMusic');
+function mulaiUndangan(){
+    const overlay=document.getElementById('guest-overlay');
+    const music=document.getElementById('weddingMusic');
 
-    overlay.style.opacity = '0';
-    setTimeout(() => {
-        overlay.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }, 1200);
+    overlay.style.opacity='0';
+    setTimeout(()=>{
+        overlay.style.display='none';
+        document.body.style.overflow='auto';
+    },1200);
 
     music.play().catch(()=>{});
 }
 
-/* === SAFE 3D PARALLAX === */
-const container = document.querySelector('.main-container');
+/* === PARALLAX 3D (STABLE) === */
+const container=document.querySelector('.main-container');
 
-document.addEventListener('mousemove', e => {
-    if (!container) return;
+document.addEventListener('mousemove',e=>{
+    const x=(e.clientX/window.innerWidth-.5)*6;
+    const y=(e.clientY/window.innerHeight-.5)*-6;
 
-    const x = (e.clientX / window.innerWidth - 0.5) * 8;
-    const y = (e.clientY / window.innerHeight - 0.5) * -8;
-
-    container.style.transform =
-        `rotateY(${x}deg) rotateX(${y}deg)`;
-});
-
-/* Mobile gyro (dibatasi agar tidak blank) */
-window.addEventListener('deviceorientation', e => {
-    if (!container || !e.gamma) return;
-
-    const y = Math.max(Math.min(e.gamma, 15), -15) / 2;
-    const x = Math.max(Math.min(e.beta, 15), -15) / 3;
-
-    container.style.transform =
-        `rotateY(${y}deg) rotateX(${x}deg)`;
+    container.style.transform=`rotateY(${x}deg) rotateX(${y}deg)`;
 });
 </script>
-</div>
 </body>
 </html>
