@@ -7,16 +7,95 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* CSS TOTAL */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background: #0f0c29;
+            background: linear-gradient(to bottom, #24243e, #302b63, #0f0c29);
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Overlay Awal */
+        .overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #0f0c29;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: 1s ease-in-out;
+        }
+
+        .overlay-content h2 { font-size: 0.8rem; letter-spacing: 3px; margin-bottom: 10px; color: #d4af37; }
+        .overlay-content h1 { font-family: 'Alex Brush', cursive; font-size: 3rem; color: #d4af37; margin-bottom: 30px; }
+
+        .btn-open {
+            padding: 12px 30px;
+            background: #d4af37;
+            border: none;
+            border-radius: 50px;
+            color: #0f0c29;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Container Utama */
+        .main-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .scroll-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        /* Hero Section */
+        .main-title { font-family: 'Alex Brush', cursive; font-size: 3.5rem; color: #d4af37; line-height: 1.2; }
+        .gold-line { border: 0; height: 1px; background: linear-gradient(to right, transparent, #d4af37, transparent); width: 80%; margin: 20px 0; }
+        .date-text { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
+        .bounce-arrow { font-size: 2rem; color: #d4af37; margin-top: 30px; animation: bounce 2s infinite; }
+
+        /* Gallery Section */
+        .section-title { font-family: 'Alex Brush', cursive; font-size: 2.5rem; color: #d4af37; margin-bottom: 30px; }
+        .photo-list { width: 100%; }
+        .photo-box { width: 100%; border-radius: 15px; overflow: hidden; border: 2px solid rgba(212, 175, 55, 0.3); margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .photo-box img { width: 100%; display: block; height: auto; transition: 0.5s; }
+        .photo-box img:hover { transform: scale(1.05); }
+
+        /* Info Section */
+        .card { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); padding: 40px 20px; border-radius: 20px; border: 1px solid rgba(212,175,55,0.2); width: 100%; }
+        .info-item { margin: 20px 0; }
+        .info-item i { font-size: 1.5rem; color: #d4af37; margin-bottom: 10px; display: block; }
+        .btn-map { display: inline-block; margin-top: 20px; padding: 12px 25px; background: #d4af37; color: #0f0c29; text-decoration: none; border-radius: 5px; font-weight: bold; }
+
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
 </head>
-<body>
+<body style="overflow: hidden;">
 
     <div id="guest-overlay" class="overlay">
         <div class="overlay-content">
-            <p>Dear Guests,</p>
+            <h2>THE WEDDING OF</h2>
             <h1>GitZCall911 & Someone</h1>
             <button onclick="mulaiUndangan()" class="btn-open">
-                <i class="fas fa-envelope-open-text"></i> Buka Undangan
+                <i class="fas fa-envelope-open-text"></i> BUKA UNDANGAN
             </button>
         </div>
     </div>
@@ -25,59 +104,67 @@
         <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
     </audio>
 
-    <section id="home" class="section active">
-        <div class="card">
-            <div class="sakura-ornament">🌸</div>
-            <p class="top-text">THE WEDDING OF</p>
+    <div class="main-container">
+        
+        <section class="scroll-section">
+            <p style="letter-spacing: 5px; font-size: 0.7rem; opacity: 0.8;">WELCOME TO OUR BIG DAY</p>
             <h1 class="main-title">GitZCall911</h1>
-            <div class="and-symbol">&</div>
+            <div style="font-size: 1.5rem; color: #d4af37;">&</div>
             <h1 class="main-title">Someone</h1>
             <hr class="gold-line">
-            <p class="date-text">SABTU, 14 FEBRUARI 2026</p>
-            <p class="location-preview">Villa Handap Bapak Aing</p>
-        </div>
-    </section>
+            <p class="date-text">14 FEBRUARI 2026</p>
+            <p style="font-style: italic; opacity: 0.7;">Scroll ke bawah</p>
+            <div class="bounce-arrow"><i class="fas fa-chevron-down"></i></div>
+        </section>
 
-    <section id="gallery" class="section">
-        <h2 class="section-title">Our Gallery</h2>
-        <div class="gallery-grid">
-            <div class="photo-box"><img src="https://share.google/f39GKT5OFTGYr0xx5?q=80&w=600" alt="Foto 1"></div>
-            <div class="photo-box"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600" alt="Foto 2"></div>
-            <div class="photo-box"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600" alt="Foto 3"></div>
-            <div class="photo-box"><img src="https://share.google/f39GKT5OFTGYr0xx5?q=80&w=600" alt="Foto 4"></div>
-        </div>
-    </section>
-
-    <section id="location" class="section">
-        <div class="card">
-            <h2 class="section-title">Detail Acara</h2>
-            <div class="info-item">
-                <i class="fas fa-clock"></i>
-                <p>09:00 WIB - Selesai</p>
+        <section class="scroll-section">
+            <h2 class="section-title">Our Moments</h2>
+            <div class="photo-list">
+                <div class="photo-box"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600" alt="Foto 1"></div>
+                <div class="photo-box"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600" alt="Foto 2"></div>
+                <div class="photo-box"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600" alt="Foto 3"></div>
+                <div class="photo-box"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600" alt="Foto 4"></div>
             </div>
-            <div class="info-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <p><strong>Villa Handap Bapak Aing</strong><br>Jl. Palm Hill Golf Club, Sentul</p>
+        </section>
+
+        <section class="scroll-section">
+            <div class="card">
+                <h2 class="section-title" style="font-size: 2rem;">Waktu & Tempat</h2>
+                <div class="info-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <p>Sabtu, 14 Februari 2026</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <p>Pukul 09.00 WIB - Selesai</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p><strong>Villa Handap Bapak Aing</strong><br>Jl. Palm Hill Golf Club, Sentul</p>
+                </div>
+                <a href="https://maps.google.com" target="_blank" class="btn-map">NAVIGASI GOOGLE MAPS</a>
             </div>
-            <a href="https://maps.google.com" target="_blank" class="btn-map">LIHAT GOOGLE MAPS</a>
-        </div>
-    </section>
+            <p style="margin-top: 50px; font-size: 0.7rem; opacity: 0.5;">Made with ❤️ for GitZCall911 & Someone</p>
+        </section>
 
-    <nav class="bottom-nav">
-        <div class="nav-btn active" onclick="pindahSection('home', this)">
-            <i class="fas fa-heart"></i>
-            <span>Home</span>
-        </div>
-        <div class="nav-btn" onclick="pindahSection('gallery', this)">
-            <i class="fas fa-images"></i>
-            <span>Gallery</span>
-        </div>
-        <div class="nav-btn" onclick="pindahSection('location', this)">
-            <i class="fas fa-map-marked-alt"></i>
-            <span>Lokasi</span>
-        </div>
-    </nav>
+    </div>
 
-    <script src="script.js"></script>
+    <script>
+        function mulaiUndangan() {
+            const overlay = document.getElementById('guest-overlay');
+            const music = document.getElementById('weddingMusic');
+            
+            // Hilangkan Overlay
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Aktifkan scroll
+            }, 1000);
+            
+            // Putar Musik
+            music.play().catch(e => console.log("Audio play failed"));
+        }
+    </script>
+
 </body>
 </html>
