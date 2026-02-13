@@ -1,28 +1,32 @@
-// script.js
 function mulaiUndangan() {
-    // Sembunyikan Overlay
-    document.getElementById('guest-overlay').style.transform = 'translateY(-100%)';
+    // 1. Sembunyikan Overlay
+    const overlay = document.getElementById('guest-overlay');
+    if (overlay) {
+        overlay.style.opacity = '0';
+        setTimeout(() => {
+            overlay.style.display = 'none';
+        }, 1000);
+    }
     
-    // Putar Musik
+    // 2. Putar Musik
     const music = document.getElementById('weddingMusic');
-    music.play();
+    if (music) {
+        music.play().catch(error => {
+            console.log("Autoplay dicegah oleh browser, tapi musik akan tetap jalan.");
+        });
+    }
 }
 
+// Fungsi pindah section
 function pindahSection(sectionId, element) {
-    // Sembunyikan semua section
     document.querySelectorAll('.section').forEach(sec => {
         sec.classList.remove('active');
     });
-
-    // Tampilkan section yang dipilih
     document.getElementById(sectionId).classList.add('active');
 
-    // Atur tombol navigasi aktif
     document.querySelectorAll('.nav-btn').forEach(btn => {
         btn.classList.remove('active');
     });
     element.classList.add('active');
-
-    // Auto scroll ke atas
     window.scrollTo(0, 0);
 }
